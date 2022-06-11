@@ -1,48 +1,47 @@
 // fill in javascript code here
 
-  let head=document.querySelector("tr3");
-  document.querySelector("tbody").append(head);
- let nam=document.querySelector("#name").value;
- let empid=document.querySelector("#employeeID");
- let deptmnt=document.querySelector("#department");
- let exp=document.querySelector("#exp");
- let emlid=document.querySelector("#email");
- let mblnmbr=document.querySelector("#mbl");
-
-
-let tr2=document.createElement("tr").setAttribute("id","pankaj");
-let t1=document.createElement("th").innerText="hi";
-let t2=document.createElement("th").innerText="hello";
-let t3=document.createElement("th").innerText="who";
-let t4=document.createElement("th").innerText="me";
-let t5=document.createElement("th").innerText="i";
-let t6=document.createElement("th").innerText="j";
-let t7=document.createElement("th").innerText="k";
-let t8=document.createElement("th").innerText="l";
-let pank=document.querySelector("#pankaj");
-
-document.querySelector("#pankaj").append(t1,t2,t3,t4,t5,t6,t7,t8)
-let x=document.querySelector("#pankaj");
-document.querySelector("table>tbody").append(x);
-// document.querySelector("tbody").append(pank);
-
-
-
-document.querySelector("form").addEventListener("submit",myfucntion)
-
-
-function myfucntion(event)
-{
- event.preventDefault();
- t1.innerText=nam;
- t2.innerText=empid.value;
- t3.innerText=deptmnt.value;
- t4.innerText=exp.value;
-
- t5.innerText=emlid.value;
- t6.innerText=mblnmbr.value;
  
-  
+document.querySelector("form").addEventListener("submit",myfunction);
+function myfunction(event)
+{
+  event.preventDefault();
+ let nam=document.querySelector("#name").value;
+ let empid=document.querySelector("#employeeID").value;
+ let dept=document.querySelector("#department").value;
+ let exp=document.querySelector("#exp").value;
+ let email=document.querySelector("#email").value;
+ let mbl=document.querySelector("#mbl").value;
 
+ let tr=document.createElement("tr");
+ let td1=document.createElement("td");
+ td1.innerText=nam;
+ let td2=document.createElement("td");
+ td2.innerText=empid;
+ let td3=document.createElement("td");
+ td3.innerText=dept;
+ let td4=document.createElement("td");
+ td4.innerText=exp;
+ let td5=document.createElement("td");
+ td5.innerText=email;
+ let td6=document.createElement("td");
+ td6.innerText=mbl;
+ let td7=document.createElement("td");
+if(Number(exp)>5)
+{
+  td7.innerText="Senior";
+}
+else if(Number(exp)<5&&Number(exp)>2)
+{
+  td7.innerText="Junior";
+}
+else if(Number(exp)<1)
+{
+  td7.innerText="Fresher";
+}
+ let td8=document.createElement("button");
+ td8.innerText="Delete";
+
+ tr.append(td1,td2,td3,td4,td5,td6,td7,td8);
+ document.querySelector("tbody").append(tr);
 
 }
